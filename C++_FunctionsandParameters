@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+void myFunc(){
+        std::cout<<"I got my function"<<endl;
+    }
+void myFunction(string name){
+    cout<<"My name is "<<name<<endl;
+}    
+void myStudent(string name,int age){
+    cout<<"My name is "<<name<<"\t";
+    cout<<"Age is"<<age<<"\n";
+}
+int add(int x){
+    return ++x;
+}
+string concatenate(string x)
+{
+    return "Hi "+x;
+}
+
+int myArray(int a[5],int num){
+    int count=0;
+    for(int i=0;i<5;i++){
+        if(num==a[i]){
+            cout<<"Index of"<<num<< "is "<<i<<endl;
+            ++count;
+        }
+        
+        }
+        return count;
+    }
+
+ 
+int main() {
+    
+    myFunc();
+    myFunction("kashish");
+    myStudent("kaniska",21);
+    cout<<add(6);
+   cout<< concatenate("kashish");
+   int ar[5]={3,6,7,8,6};
+   cout<<myArray(ar,6);
+    return 0;
+}
+
