@@ -4,3 +4,112 @@ Constructor
   Copy
 Destructor
 Overloading
+#include <iostream>
+using namespace std;
+
+class wall{
+    int length;
+    public:
+    wall(){
+        length=3;
+        cout<<"wall height is"<<length<<endl;
+        
+    }
+};
+
+class rect{
+    private:
+    int height;
+    int width;
+    int area;
+    public:
+    rect(int h,int w){
+        height=h;
+        width=w;
+    }
+    
+    int calculate(){
+       area=height*width;
+       return area;
+    }
+};
+
+class initializerList{
+    private:
+    int age;
+    public:
+    initializerList(int a)
+        :age{a}{
+        cout<<"My age is "<<age<<"\n";
+        
+    }
+};
+
+class Box{
+    private:
+    string color;
+    int volume;
+    public:
+    Box(string c,int v)
+        :color{c}
+        ,volume{v}{
+        
+        }
+    
+    
+    Box(const Box&b1)
+        :color{b1.color}
+        ,volume{b1.volume}{
+            
+    }
+    
+    void show(){
+        cout<<"Volume is"<<volume<<"\n";
+    }
+    
+    ~Box(){
+        cout<<"Object is deleted"<<endl;
+    }
+};
+
+class Person{
+    private:
+    int age;
+    string gender="male";
+    bool case=false;
+    public:
+    Person(){
+        age=8;
+    }
+    
+    Person(int a,string g){
+        age=a;
+        gender=g;
+    }
+    
+    int show(){
+        if(age>18 && gender=="female"){
+            case=true;
+        }
+        
+        else{
+            cout<<"Not qualified";
+        }
+        return case;
+    }
+}
+
+int main() {
+    // Write C++ code here
+    std::cout << "Try programiz.pro";
+    wall w;
+    rect r(5,8);
+    cout<<"Area of rectangle is "<<r.calculate()<<endl;
+    initializerList i(21);
+    Box b1("red",67);
+    Box b2=b1;
+    Person p(),p1(20,"female");
+    cout<<p.show()<<"\n";
+    cout<<p1.show()<<"\n";
+    return 0;
+}
